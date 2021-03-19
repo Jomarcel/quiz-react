@@ -1,11 +1,7 @@
 import { ReactElement, FC, useState, useEffect } from "react";
 import "../styles/trivia-item.css";
 import { shuffleArray } from "../utils";
-import {
-  setUserAnswer,
-  updateScore,
-  selectedAnswer,
-} from "../actions/quizActions";
+import { setUserAnswer, updateScore } from "../actions/quizActions";
 import { connect } from "react-redux";
 
 interface Props {
@@ -20,14 +16,12 @@ const mapDispatchToProps = (dispatch: any) => {
     updateScore: () => dispatch(updateScore()),
     setUserAnswer: (userAnswer: any, question: any, answers: any) =>
       dispatch(setUserAnswer(userAnswer, question, answers)),
-    setAnswer: (userAnswer: any) => dispatch(selectedAnswer(userAnswer)),
   };
 };
 
 interface DispatchProps {
   updateScore: () => void;
   setUserAnswer: (userAnswer: any, question: any, answers: any) => void;
-  setAnswer: (userAnswer: any) => void;
 }
 type MyProps = Props & DispatchProps;
 const Questionnaire: FC<MyProps> = ({
@@ -36,7 +30,6 @@ const Questionnaire: FC<MyProps> = ({
   question,
   goNext,
   setUserAnswer,
-  setAnswer,
   updateScore,
 }): ReactElement => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -57,7 +50,6 @@ const Questionnaire: FC<MyProps> = ({
     const answerSelected = e.target.innerHTML;
     setSelectedAnswer(answerSelected);
     setUserAnswer(answerSelected, question, shuffledAnswers);
-    // setAnswer(answerSelected);
     const isCorrectAnswer = answerSelected === correctAnswer;
     if (isCorrectAnswer) {
       updateScore();

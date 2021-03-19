@@ -22,13 +22,10 @@ const quizPageReducer = (state = initialState, action:any) => {
             return {...state, index: nextIndex, isGameOver:setGameOver}
 
         case ActionTypes.SET_USER_ANSWER:
-            // return [...state.userAnswer, {selectedAnswer:action.payload.selectedAnswer, question: action.payload.question, answers: action.payload.answers}] 
              return {
-
                 ...state,
                 userAnswer:[...state.userAnswer,  {selectedAnswer:action.payload.selectedAnswer, question: action.payload.question, answers: action.payload.answers}]
             }
-    
 
        case ActionTypes.CHANGE_SCORE:
             return {
