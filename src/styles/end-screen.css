@@ -1,0 +1,52 @@
+
+  .end-screen__stat {
+    margin: 1rem;
+  }
+  
+  .end-screen__stat-label {
+    font-size: 1rem;
+    font-style: italic;
+  }
+  
+  .end-screen__stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .result{
+    position: relative;
+    width: 90%;
+    margin:auto;
+    padding-bottom: 9%;
+  }
+
+  .result-question {
+    background-color: #eee;
+    margin: 0.5rem;
+    padding: 1rem;
+
+}
+
+  .result__buttons{
+
+    position:absolute;
+    right: 0;
+  
+  }
+ 
+  .button {
+    cursor: pointer;
+    margin:1em 0.5em;
+    padding:0.8rem 1.8rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color:#2E86C1 ; 
+    display: inline-block; 
+    border: 1px solid blue;
+
+}
+.button:nth-child(1) {
+  background-color:red; 
+}
+ 
